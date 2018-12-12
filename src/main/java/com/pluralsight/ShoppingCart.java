@@ -50,6 +50,15 @@ public class ShoppingCart {
 	 }
  }
  
+ public void updateCartItem(int index, int quantity) {
+	 CartItem cart = cartItems.get(index);
+	 try {
+		 cart.setQuantity(quantity);
+	 }catch(IndexOutOfBoundsException e) {
+		 e.printStackTrace();
+	 }
+ }
+ 
  protected void calculateOrderTotal() {
   double dblTotal = 0;
   for(int counter=0;counter<cartItems.size();counter++) {
